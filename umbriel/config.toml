@@ -96,6 +96,7 @@ enabled = false
 "XF86AudioLowerVolume" = { action = "spawn:noctalia msg volume-down 2", allow_when_locked = true }
 
 # Applications and session
+"Mod+I" = { action = "spawn:noctalia msg settings-toggle", repeat = false }
 "Mod+T" = { action = "spawn:kitty", repeat = false }
 "Mod" = "spawn:noctalia msg panel-toggle launcher"
 "Mod+L" = { action = "spawn:noctalia msg session lock", repeat = false }
