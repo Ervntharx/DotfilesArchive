@@ -1,0 +1,253 @@
+# location:	~/.config/umbriel/config.toml
+# ==============================================================================
+# Includes
+[include]
+files = []
+
+[include.optional]
+files = ["noctalia.toml"]
+
+# ==============================================================================
+# General
+
+[general]
+autostart = ["noctalia", "fcitx5"]
+# xwayland = false
+# Sharp X11 apps and games on scaled outputs; they see physical resolutions.
+# xwayland_native_resolution = true
+
+# ==============================================================================
+# Lid events
+
+[events]
+lid_close = "umbriel msg output-disable:eDP-1"
+lid_open = "umbriel msg output-enable:eDP-1"
+
+# ==============================================================================
+# Screencast
+[screencast]
+disable_dynamic_confirmation = false
+
+# ==============================================================================
+# Outputs
+[output.eDP-1]
+mode = "2880x1800@120.000"
+position = [0, 0]
+scale = 1.5
+vrr = "always"
+hdr = "auto"
+
+# ==============================================================================
+# Appearance
+[appearance]
+prefer_no_csd = true
+border_width = 2
+corner_radius = 5
+drag_opacity = 0.8
+
+[appearance.blur]
+enabled = true
+optimized = true
+passes = 1
+radius = 1
+# noise = 0.1
+brightness = 0.45
+contrast = 0.8
+saturation = 0.9
+
+# Choose the background color shown if the lock screen takes too long to appear.
+# [colors]
+# backdrop = "#00000000"
+
+[colors.overview]
+background_tint = "#00000000"
+workspace_background = "#00000000"
+
+# ==============================================================================
+# Input
+[input.keyboard]
+numlock_toggle = true
+
+[input.touch]
+enabled = false
+# map_to_output = "eDP-1"
+
+# ==============================================================================
+# Keybinds
+[keybinds]
+# brightness
+"XF86MonBrightnessDown" = { action = "spawn:noctalia msg brightness-down 2", allow_when_locked = true }
+"XF86MonBrightnessUp" = { action = "spawn:noctalia msg brightness-up 2", allow_when_locked = true }
+# Audio
+"XF86AudioMute" = { action = "spawn:noctalia msg volume-mute", allow_when_locked = true }
+"XF86AudioRaiseVolume" = { action = "spawn:noctalia msg volume-up 2", allow_when_locked = true }
+"XF86AudioLowerVolume" = { action = "spawn:noctalia msg volume-down 2", allow_when_locked = true }
+
+# Applications and session
+"Mod+T" = { action = "spawn:kitty", repeat = false }
+"Mod" = "spawn:noctalia msg panel-toggle launcher"
+"Mod+L" = { action = "spawn:noctalia msg session lock", repeat = false }
+"Mod+X" = { action = "window-close", repeat = false }
+"Mod+Escape" = "session-quit"
+"Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
+
+# screenshot
+"Print" = "spawn:noctalia msg screenshot-region"
+"Ctrl+Print" = "spawn:noctalia msg screenshot-annotate"
+
+# Focus and movement
+"Mod+Left" = "window-focus-left"
+"Mod+Down" = "window-focus-or-workspace-down"
+"Mod+Up" = "window-focus-or-workspace-up"
+"Mod+Right" = "window-focus-right"
+
+# game key-layout for changing focus and movement
+"Mod+A" = "window-focus-left"
+"Mod+S" = "window-focus-or-workspace-down"
+"Mod+W" = "window-focus-or-workspace-up"
+"Mod+D" = "window-focus-right"
+"Mod+Q" = "window-modify-primary-extent:-0.2"
+"Mod+E" = "window-modify-primary-extent:0.2"
+
+"Mod+Ctrl+Left" = "column-move-left"
+"Mod+Ctrl+Down" = "window-move-or-workspace-down"
+"Mod+Ctrl+Up" = "window-move-or-workspace-up"
+"Mod+Ctrl+Right" = "column-move-right"
+
+# game layout for moving windows
+"Mod+Shift+A" = "column-move-left"
+"Mod+Shift+S" = "window-move-or-workspace-down"
+"Mod+Shift+W" = "window-move-or-workspace-up"
+"Mod+Shift+D" = "column-move-right"
+
+# Window state and layout
+"Mod+V" = { action = "window-toggle-floating", repeat = false }
+"Mod+Shift+V" = { action = "window-focus-switch-floating", repeat = false }
+"Mod+M" = { action = "window-toggle-maximize-to-edges", repeat = false }
+"Mod+F" = { action = "window-toggle-fullscreen", repeat = false }
+"Mod+Ctrl+F" = { action = "window-toggle-maximize", repeat = false }
+"Mod+BracketLeft" = "window-consume-or-expel-left"
+"Mod+BracketRight" = "window-consume-or-expel-right"
+"Mod+R" = "window-cycle-primary-extent"
+"Mod+Shift+R" = "window-cycle-primary-extent-back"
+"Mod+O" = { action = "overview-toggle", repeat = false }
+
+# resize window
+
+"Mod+Equal" = "window-modify-primary-extent:0.2"
+"Mod+Minus" = "window-modify-primary-extent:-0.2"
+"Mod+Shift+Equal" = "window-modify-secondary-extent:0.2"
+"Mod+Shift+Minus" = "window-modify-secondary-extent:-0.2"
+
+# Scratchpad
+"Mod+Shift+Space" = { action = "window-move-to-scratchpad", repeat = false }
+"Mod+Space" = "scratchpad-toggle"
+"Mod+Ctrl+Space" = { action = "window-restore-from-scratchpad", repeat = false }
+"Mod+Tab" = "scratchpad-focus-next"
+
+# ==============================================================================
+# Layout
+[layout]
+gap = 2
+extent_presets = [0.333, 0.5, 0.667]
+
+[layout.scrolling]
+default_extent_fraction = 0.5
+center_underfull_strip = false
+
+# ==============================================================================
+# Window rules
+[[window_rule]]
+blur = true
+blur_optimized = true
+opacity = 0.85
+shadow = true
+
+[[window_rule]]
+match.app_id = "^dev.noctalia.UmbrielSharePicker$"
+default_floating = true
+default_floating_size_px = { width = 800, height = 600 }
+
+[[window_rule]]
+match.title = "^(Picture-in-Picture|Picture in picture)$"
+default_floating = true
+default_maximize = false
+default_position = { x = 20, y = 20, anchor = "bottom_right" }
+
+[[window_rule]]
+match.title = "^notificationtoasts_.+_desktop"
+default_position = { x = 0, y = 0, anchor = "bottom_right" }
+default_focused = false
+default_pinned = true
+
+# ==============================================================================
+# Layer rules
+# https://docs.noctalia.dev/umbriel/layer-rules/
+[[layer_rule]]
+match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$"
+blur = true
+blur_ignore_alpha = 0.5
+blur_popups = true
+blur_optimized = false
+
+# ==============================================================================
+# Overview
+[overview]
+zoom = 0.65
+background_blur = true
+workspace_wallpaper = false
+
+# =============================================================================
+# Animation
+[animation]
+enabled = true
+duration_ms = 500
+curve = "easeout"
+
+[animation.windows_in]
+enabled = true
+curve = "spring:1,200"
+style = "popin"
+scale = 0.5
+
+[animation.windows_out]
+enabled = true
+curve = "spring:1,200"
+style = "popin"
+scale = 0.8
+
+[animation.windows_move]
+enabled = true
+curve = "spring:1,150"
+
+[animation.workspaces]
+enabled = true
+curve = "spring:1,200"
+
+[animation.overview]
+enabled = true
+curve = "spring:1,150"
+workspace_curve = "spring:1,150"
+
+[animation.scratchpad]
+enabled = true
+curve = "spring:1,200"
+dim = 0.8
+blur = false
+scale = 0.0
+maximize = false
+fullscreen = false
+
+[animation.border]
+enabled = true
+curve = "spring:1,100"
+
+[animation.dim_unfocused]
+enabled = true
+dim = 0.2
+
+[animation.layers]
+enabled = true
+
+[animation.windows_drag]
+physics = false
