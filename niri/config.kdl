@@ -1,9 +1,13 @@
-// location:	~/.config/niri/config.kdl
 environment {
 	// GTK_THEME "Adwaita:dark"
 	QT_QPA_PLATFORM "wayland"
 	QT_QPA_PLATFORMTHEME "qt6ct"
 	SDL_VIDEODRIVER "wayland"
+}
+
+cursor {
+	xcursor-theme "Bibata-Modern-Ice"
+	xcursor-size 24
 }
 
 // Input device configuration.

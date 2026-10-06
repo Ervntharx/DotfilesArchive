@@ -1,0 +1,15 @@
+# location:	~/.config/yazi/keymap.tomal
+[[mgr.prepend_keymap]]
+on = ["<Enter>"]
+run = "open --interactive"
+desc = "Open files interactively"
+
+[[mgr.prepend_keymap]]
+on  = [ "o" ]
+run = "open --interactive"
+desc = "Open files interactively (show menu)"
+
+[[mgr.prepend_keymap]]
+on  = [ "O" ]
+run = "open --interactive"
+desc = "Open files interactively (show menu)"

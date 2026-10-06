@@ -1,0 +1,110 @@
+# location:	~/.config/yazi/yazi.toml
+[mgr]
+show_hidden=true
+
+[[open.prepend_rules]]
+url="*.cs"
+use=[
+	"edit_code",
+	"edit_code_sudo",
+	"open_nano",
+	"edit_nano_sudo"
+]
+
+[[open.prepend_rules]]
+url="*.c"
+use=[
+	"edit_code",
+	"edit_code_sudo",
+	"open_nano",
+	"edit_nano_sudo"
+]
+
+[[open.prepend_rules]]
+url="*.cpp"
+use=[
+	"edit_code",
+	"edit_code_sudo",
+	"open_nano",
+	"edit_nano_sudo"
+]
+
+[[open.prepend_rules]]
+url="*.json"
+use=[
+	"edit_code",
+	"edit_code_sudo",
+	"open_nano",
+	"edit_nano_sudo"
+]
+
+[[open.prepend_rules]]
+url="*.h"
+use=[
+	"edit_code",
+	"edit_code_sudo",
+	"open_nano",
+	"edit_nano_sudo"
+]
+
+[[open.prepend_rules]]
+mime="image/*"
+use=[
+	"open_with_imv"
+]
+
+[[open.prepend_rules]]
+mime="video/*"
+use=[
+	"open_with_mpv"
+]
+
+[opener]
+
+open_nano=[
+	{
+		run="nano \"$@\"",
+		desc="Open with Nano",
+		block=false,
+	}
+]
+
+edit_nano_sudo=[
+	{
+		run="sudo nano \"$@\"",
+		desc="Open with Nano in sudo",
+		block=true,
+	}
+]
+
+edit_code=[
+	{
+		run="code-oss \"$@\"",
+		desc="Open with vscode",
+		block=false,
+	}
+]
+
+edit_code_sudo=[
+	{
+		run="sudo code-oss \"$@\"",
+		desc="Open with vscode in sudo",
+		block=true,
+	}
+]
+
+open_with_imv=[
+	{
+		run="imv \"%s\"",
+		desc="Open with imv",
+		block=false,
+	}
+]
+
+open_with_mpv=[
+	{
+		run="mpv \"%s\"",
+		desc="Open with mpv",
+		block=false,
+	}
+]

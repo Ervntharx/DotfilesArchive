@@ -1,4 +1,10 @@
 # location:	~/.config/umbriel/config.toml
+# Environment
+[environment]
+QT_QPA_PLATFORM = "wayland"
+QT_QPA_PLATFORMTHEME = "qt6ct"
+SDL_VIDEODRIVER "wayland"
+
 # ==============================================================================
 # Includes
 [include]
@@ -67,6 +73,12 @@ workspace_background = "#00000000"
 # Input
 [input.keyboard]
 numlock_toggle = true
+
+[input.cursor]
+theme = "Bibata-Modern-Ice"
+size = 24
+hide_when_typing = true
+hide_timeout_ms = 15000
 
 [input.touch]
 enabled = false

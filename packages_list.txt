@@ -1,0 +1,77 @@
+archlinuxcn-keyring
+base-devel	[optional]	# dev tools
+bitwarden-cli
+bluez
+brightnessctl	[replace by noctalia shell?]
+clash-party-bin
+cliphist
+fcitx5
+fcitx5-chinese-addons
+fcitx5-configtool
+fcitx5-gtk
+fcitx5-qt
+fish
+fd	[optional]	# better find
+fprintd	[optional]
+gdu	[optional]	# tui version of du
+git
+glow	[optional]	# markdown renderer tui
+gnome-themes-extra	[waitToBeComfirm]
+godot-mono
+google-chrome
+gpu-screen-recorder
+grub
+htop	[optional]	# system minitor tui
+imv	# image viewer
+jq	[optional:for yazi]	# json processor (for yazi)
+kitty
+krita
+lazygit	[optional]	# git tui
+less
+linuxqq
+libre-office-still
+man-db
+man-pages-zh_cn
+mediainfo	[optional:for yazi]
+mihomo
+mpv # vedio player
+nano
+nbfc-linux
+ncmpcpp	[optional]	# music player
+neovim
+networkmanager
+niri
+noctalia
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+openssh
+pacman-contrib	# pacman tools (pactree)
+papirus-icon-theme
+piliplus-bin
+playerctl	[replace by noctalia shell?]
+polkit-gnome	[optional:for fprintd]	# gnome polkit, installed for fprintd
+power-profiles-daemon	[waitToBeComfirm]	# for noctalia?
+udiskie	# for u disk
+rate-mirrors	# for pacman
+resvg	[optional:for yazi]	SVG renderer
+rustdesk
+steam
+systemctl-tui	[optional]	# systemctl tui version
+tmux
+translate-shell
+ttf-firacode-nerd	[optional:for yazi]	# show icon in yazi
+ttf-maplemono
+umbriel-git
+unzip
+visual-studio-code-bin
+vulkan-tools
+wl-clipboard
+xdg-desktop-portal-gnome	# for niri
+xdg-desktop-portal-wlr
+xsettingsd
+xwayland-satellite	# for niri
+yay
+yazi
+zen-browser	[optional]	# browser with great appearance
+zip
