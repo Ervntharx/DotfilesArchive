@@ -3,7 +3,7 @@
 [environment]
 QT_QPA_PLATFORM = "wayland"
 QT_QPA_PLATFORMTHEME = "qt6ct"
-SDL_VIDEODRIVER "wayland"
+SDL_VIDEODRIVER = "wayland"
 
 # ==============================================================================
 # Includes
@@ -192,6 +192,10 @@ match.title = "^notificationtoasts_.+_desktop"
 default_position = { x = 0, y = 0, anchor = "bottom_right" }
 default_focused = false
 default_pinned = true
+
+#[[window_rule]]
+#match.app_id = "^QQ"
+#default_floating = false
 
 # ==============================================================================
 # Layer rules
