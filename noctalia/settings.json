@@ -14,9 +14,56 @@ enabled = false
 tint_intensity = 0.30000001192092896
 
 [bar]
-order = [ "default", "TCCaller", "TopCenter" ]
+order = [ "Caller", "Main", "DeCaller", "Deputy" ]
 
-    [bar.TCCaller]
+    [bar.Caller]
+    auto_hide = true
+    background_opacity = 0.55000001192092896
+    border = "outline"
+    border_width = 0.0
+    capsule = false
+    capsule_border_width = 1.0
+    capsule_fill = "surface_variant"
+    capsule_group = []
+    capsule_opacity = 1.0
+    capsule_padding = 6.0
+    capsule_thickness = 0.75999999046325684
+    center = []
+    compositor_blur = true
+    concave_edge_corners = true
+    contact_shadow = false
+    enabled = true
+    end = []
+    font_scale = 1.0
+    font_weight = 500
+    hover_highlight = true
+    layer = "top"
+    margin_edge = 0
+    margin_ends = 100
+    margin_opposite_edge = 0
+    padding = 14
+    panel_overlap = 1
+    position = "top"
+    radius = 12
+    radius_bottom_left = 12
+    radius_bottom_right = 12
+    radius_top_left = 12
+    radius_top_right = 12
+    reserve_space = false
+    scale = 1.0
+    shadow = true
+    show_on_workspace_switch = true
+    smart_auto_hide = false
+    start = []
+    thickness = 10
+    widget_spacing = 6
+
+        [bar.Caller.dead_zone.actions]
+        left = "bar-show Main"
+        scroll_down = "bar-show Main"
+        scroll_up = "bar-hide Caller"
+
+    [bar.DeCaller]
     auto_hide = true
     background_opacity = 0.5
     border = "outline"
@@ -39,11 +86,11 @@ order = [ "default", "TCCaller", "TopCenter" ]
     hover_highlight = true
     layer = "top"
     margin_edge = 0
-    margin_ends = 900
+    margin_ends = 850
     margin_opposite_edge = 0
     padding = 14
     panel_overlap = 1
-    position = "top"
+    position = "bottom"
     radius = 12
     radius_bottom_left = 12
     radius_bottom_right = 12
@@ -51,74 +98,28 @@ order = [ "default", "TCCaller", "TopCenter" ]
     radius_top_right = 12
     reserve_space = false
     scale = 1.0
-    shadow = false
-    show_on_workspace_switch = false
+    shadow = true
+    show_on_workspace_switch = true
     smart_auto_hide = false
     start = []
     thickness = 10
     widget_spacing = 6
 
-        [bar.TCCaller.dead_zone.actions]
-        right = "bar-toggle default"
-        scroll_down = "bar-show TopCenter"
-        scroll_up = "bar-hide TopCenter"
+        [bar.DeCaller.dead_zone.actions]
+        left = "bar-show Deputy"
+        right = "dock-toggle"
+        scroll_down = "bar-hide DeCaller"
+        scroll_up = "bar-show Deputy"
 
-    [bar.TopCenter]
+    [bar.Deputy]
     auto_hide = false
-    background_opacity = 0.0
-    border = "outline"
-    border_width = 0.0
-    capsule = true
-    capsule_border_width = 1.0
-    capsule_fill = "surface_variant"
-    capsule_group = []
-    capsule_opacity = 0.44999998807907104
-    capsule_padding = 17.0
-    capsule_thickness = 0.75999999046325684
-    center = [ "clock" ]
-    compositor_blur = true
-    concave_edge_corners = true
-    contact_shadow = false
-    enabled = true
-    end = []
-    font_family = "Maple Mono"
-    font_scale = 1.0
-    font_weight = 500
-    hover_highlight = true
-    layer = "top"
-    margin_edge = 0
-    margin_ends = 900
-    margin_opposite_edge = 0
-    padding = 14
-    panel_overlap = 1
-    position = "top"
-    radius = 12
-    radius_bottom_left = 12
-    radius_bottom_right = 12
-    radius_top_left = 12
-    radius_top_right = 12
-    reserve_space = false
-    scale = 1.25
-    shadow = false
-    show_on_workspace_switch = true
-    smart_auto_hide = false
-    start = []
-    thickness = 27
-    widget_spacing = 6
-
-        [bar.TopCenter.dead_zone.actions]
-        right = "bar-toggle default"
-        scroll_down = "bar-show TopCenter"
-        scroll_up = "bar-hide TopCenter"
-
-    [bar.default]
-    auto_hide = false
-    background_opacity = 0.44999998807907104
+    background_opacity = 0.41999998688697815
     border = "outline"
     border_width = 0.0
     capsule = false
     capsule_border_width = 1.0
     capsule_fill = "surface_variant"
+    capsule_group = []
     capsule_opacity = 1.0
     capsule_padding = 6.0
     capsule_thickness = 0.75999999046325684
@@ -128,54 +129,88 @@ order = [ "default", "TCCaller", "TopCenter" ]
     concave_edge_corners = true
     contact_shadow = false
     enabled = true
-    end = [ "tray", "group:g2" ]
+    end = [ "oppo_pods_2", "widget", "screenshot", "recorder_2", "notes" ]
     font_scale = 1.0
     font_weight = 500
     hover_highlight = true
-    icon_color = "primary"
     layer = "top"
-    margin_edge = 5
-    margin_ends = 5
+    margin_edge = 0
+    margin_ends = 800
     margin_opposite_edge = 0
     padding = 14
     panel_overlap = 1
-    position = "top"
-    radius = 52
-    radius_bottom_left = 52
-    radius_bottom_right = 52
-    radius_top_left = 52
-    radius_top_right = 52
+    position = "bottom"
+    radius = 12
+    radius_bottom_left = 12
+    radius_bottom_right = 12
+    radius_top_left = 12
+    radius_top_right = 12
     reserve_space = false
     scale = 1.0
     shadow = true
     show_on_workspace_switch = true
     smart_auto_hide = false
-    start = [ "group:g1", "recorder" ]
-    thickness = 30
+    start = [ "sysmon" ]
+    thickness = 34
     widget_spacing = 6
 
-        [bar.default.dead_zone.actions]
-        scroll_up = "bar-toggle default"
+        [bar.Deputy.dead_zone.actions]
+        scroll_down = "bar-hide Deputy"
 
-        [[bar.default.capsule_group]]
+    [bar.Main]
+    auto_hide = false
+    background_opacity = 0.45999997854232788
+    border = "outline"
+    border_width = 0.0
+    capsule = false
+    capsule_border_width = 1.0
+    capsule_fill = "surface_variant"
+    capsule_opacity = 1.0
+    capsule_padding = 6.0
+    capsule_thickness = 0.75999999046325684
+    center = [ "clock" ]
+    compositor_blur = true
+    concave_edge_corners = true
+    contact_shadow = false
+    enabled = true
+    end = [ "tray", "group:g1" ]
+    font_family = "Maple Mono"
+    font_scale = 1.0
+    font_weight = 500
+    hover_highlight = true
+    icon_color = "primary"
+    layer = "top"
+    margin_edge = 0
+    margin_ends = 5
+    margin_opposite_edge = 0
+    padding = 14
+    panel_overlap = 0
+    position = "top"
+    radius = 5
+    radius_bottom_left = 5
+    radius_bottom_right = 5
+    radius_top_left = 5
+    radius_top_right = 5
+    reserve_space = false
+    scale = 1.0
+    shadow = true
+    show_on_workspace_switch = true
+    smart_auto_hide = false
+    start = [ "active_window" ]
+    thickness = 25
+    widget_spacing = 6
+
+        [bar.Main.dead_zone.actions]
+        scroll_up = "bar-hide Main"
+
+        [[bar.Main.capsule_group]]
         accordion = false
         accordion_direction = "end"
         border_width = 1.0
         enabled = true
-        fill = "outline"
+        fill = "on_primary"
         id = "g1"
-        members = [ "active_window", "audio_visualizer" ]
-        opacity = 1.0
-        padding = 6.0
-
-        [[bar.default.capsule_group]]
-        accordion = false
-        accordion_direction = "end"
-        border_width = 1.0
-        enabled = true
-        fill = "surface_variant"
-        id = "g2"
-        members = [ "bluetooth", "network", "battery" ]
+        members = [ "network", "bluetooth", "battery" ]
         opacity = 1.0
         padding = 6.0
 
@@ -244,13 +279,13 @@ active_monitor_only = false
 active_opacity = 1.0
 active_scale = 1.0
 auto_hide = false
-background_opacity = 0.87999999523162842
+background_opacity = 0.34000000357627869
 border = "outline"
 border_width = 0.0
 concave_edge_corners = false
 cross_axis_padding = 8
 enabled = false
-icon_size = 48
+icon_size = 25
 inactive_opacity = 0.85000002384185791
 inactive_scale = 0.85000002384185791
 item_spacing = 6
@@ -262,7 +297,7 @@ layer = "top"
 magnification = true
 magnification_scale = 1.4500000476837158
 main_axis_padding = 16
-margin_edge = 0
+margin_edge = 12
 margin_ends = 0
 monitors = []
 pinned = []
@@ -272,9 +307,9 @@ radius_bottom_left = 16
 radius_bottom_right = 16
 radius_top_left = 16
 radius_top_right = 16
-reserve_space = true
+reserve_space = false
 shadow = true
-show_dots = false
+show_dots = true
 show_instance_count = true
 show_running = true
 smart_auto_hide = false
@@ -507,8 +542,14 @@ scale = 1.0
     volume_output = true
     wifi = true
 
+[plugin_settings."noctalia/notes"]
+panel_placement = "attached"
+
 [plugin_settings."noctalia/translator"]
 target_lang = "zh"
+
+[plugin_settings."osp54/oppo-pods"]
+panel_placement = "attached"
 
 [plugins]
 auto_update = "official"
@@ -516,7 +557,6 @@ enabled = [
     "noctalia/notes",
     "noctalia/translator",
     "liamwh/emoji-picker",
-    "weinguyen/procmon",
     "noctalia/screen_recorder",
     "noctalia/bitwarden",
     "noctalia/kaomoji"
@@ -769,8 +809,12 @@ unit = "metric"
 icon_size = 14.0
 max_length = 260.0
 min_length = 80.0
-title_scroll = "none"
+show_empty_label = true
+title_scroll = "on_hover"
 type = "active_window"
+
+    [widget.active_window.actions]
+    left = "window-switcher"
 
 [widget.battery]
 hide_when_full = true
@@ -824,6 +868,13 @@ type = "sysmon"
 stat = "net_tx"
 type = "sysmon"
 
+[widget.notes]
+type = "noctalia/notes:notes"
+
+[widget.oppo_pods_2]
+hide_when_disconnected = false
+type = "osp54/oppo-pods:oppo-pods"
+
 [widget.output_volume]
 device = "output"
 type = "volume"
@@ -835,9 +886,20 @@ type = "sysmon"
 [widget.recorder]
 type = "noctalia/screen_recorder:recorder"
 
+[widget.recorder_2]
+type = "noctalia/screen_recorder:recorder"
+
 [widget.spacer]
 interactive = false
 type = "spacer"
+
+[widget.sysmon]
+stat = "ram_used"
+type = "sysmon"
+
+[widget.taskbar]
+show_active_indicator = false
+type = "taskbar"
 
 [widget.temp]
 stat = "cpu_temp"
@@ -846,3 +908,6 @@ type = "sysmon"
 [widget.tray]
 enabled = true
 type = "tray"
+
+[widget.widget]
+type = "liamwh/emoji-picker:widget"
