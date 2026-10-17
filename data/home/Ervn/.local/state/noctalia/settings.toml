@@ -1,0 +1,299 @@
+config_version = 14
+
+[audio]
+enable_sounds = true
+
+[bar]
+order = [ "Caller", "Main", "DeCaller", "Deputy" ]
+
+    [bar.Caller]
+    auto_hide = true
+    background_opacity = 0.54999998770654202
+    center = []
+    end = []
+    reserve_space = false
+    start = []
+    thickness = 10
+
+        [bar.Caller.dead_zone.actions]
+        left = "bar-show Main"
+        scroll_down = "bar-show Main"
+        scroll_up = "bar-hide Caller"
+
+    [bar.DeCaller]
+    auto_hide = true
+    background_opacity = 0.4999999888241291
+    center = []
+    end = []
+    margin_ends = 850
+    position = "bottom"
+    reserve_space = false
+    start = []
+    thickness = 10
+
+        [bar.DeCaller.dead_zone.actions]
+        left = "bar-show Deputy"
+        right = "dock-toggle"
+        scroll_down = "bar-hide DeCaller"
+        scroll_up = "bar-show Deputy"
+
+    [bar.Deputy]
+    background_opacity = 0.41999999061226845
+    center = []
+    color = "primary"
+    end = [ "oppo_pods_2", "widget", "screenshot", "recorder_2", "notes" ]
+    margin_ends = 800
+    position = "bottom"
+    reserve_space = false
+    start = [ "sysmon" ]
+
+        [bar.Deputy.dead_zone.actions]
+        scroll_down = "bar-hide Deputy"
+
+    [bar.Main]
+    background_opacity = 0.45999998971819878
+    end = [ "tray", "group:g1" ]
+    font_family = "Maple Mono"
+    icon_color = "primary"
+    margin_ends = 5
+    panel_overlap = 0
+    radius = 5
+    reserve_space = false
+    start = [ "active_window" ]
+    thickness = 25
+
+        [bar.Main.dead_zone.actions]
+        scroll_up = "bar-hide Main"
+
+        [[bar.Main.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        border_width = 1.0
+        enabled = true
+        fill = "on_primary"
+        id = "g1"
+        members = [ "network", "bluetooth", "battery" ]
+        opacity = 1.0
+        padding = 6.0
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+background_opacity = 0.33999999240040779
+concave_edge_corners = false
+enabled = false
+icon_size = 25
+margin_edge = 12
+reserve_space = false
+show_dots = true
+
+[lockscreen]
+blur_intensity = 0.0
+blurred_desktop = true
+tint_intensity = 0.0
+transition = [ "fade" ]
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.00018310546875
+    cy = 1061.2244873046875
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@winit"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 1427.9833984375
+    cy = 1658.9998779296875
+    output = "winit"
+    placement_height = 1788.0
+    placement_width = 2868.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[plugin_settings."noctalia/notes"]
+panel_placement = "attached"
+
+[plugin_settings."noctalia/translator"]
+target_lang = "zh"
+
+[plugin_settings."osp54/oppo-pods"]
+panel_placement = "attached"
+
+[plugins]
+auto_update = "official"
+enabled = [
+    "noctalia/notes",
+    "noctalia/translator",
+    "liamwh/emoji-picker",
+    "noctalia/screen_recorder",
+    "noctalia/bitwarden",
+    "noctalia/kaomoji"
+]
+
+[shell]
+app_icon_color = "primary"
+button_borders = false
+card_borders = false
+font_family = "Maple Mono"
+input_borders = false
+lang = "zh-Hans"
+niri_overview_type_to_launch_enabled = true
+popup_borders = false
+settings_window_translucent = true
+
+    [shell.animation]
+    speed = 0.45000000670552254
+
+    [shell.launcher]
+    compact = true
+
+    [shell.panel]
+    borders = false
+    open_near_click_control_center = true
+    open_near_click_session = true
+    polkit_placement = "attached"
+    transparency_mode = "glass"
+
+    [shell.screen_corners]
+    enabled = true
+    size = 10
+
+    [shell.screenshot]
+    confirm_region = true
+
+    [[shell.session.actions]]
+    action = "command"
+    command = "umbriel msg session-quit"
+    countdown_seconds = 0.0
+    enabled = true
+    glyph = "umbriel"
+    label = "back to tty"
+    variant = "ghost"
+
+[theme]
+builtin = "Rosé Pine"
+community_palette = "Vesper"
+custom_palette = "CPKThemeByEV"
+mode = "dark"
+wallpaper_scheme = "m3-rainbow"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kitty", "niri", "qt", "umbriel" ]
+    community_ids = [ "neovim", "vscode", "steam", "lazygit", "tmux", "yazi" ]
+
+[wallpaper]
+transition = [ "fade", "honeycomb" ]
+
+    [wallpaper.automation]
+    recursive = false
+
+    [wallpaper.default]
+    path = "/home/Ervn/Pictures/Wallpapers/AutumeFestivate.jpg"
+
+    [wallpaper.last]
+    path = "/home/Ervn/Pictures/Wallpapers/AutumeFestivate.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/Ervn/Pictures/Wallpapers/AutumeFestivate.jpg"
+
+[weather]
+enabled = false
+
+[widget.active_window]
+show_empty_label = true
+title_scroll = "on_hover"
+
+    [widget.active_window.actions]
+    left = "window-switcher"
+
+[widget.battery]
+hide_when_full = true
+
+[widget.clock]
+color = "primary"
+interactive = false
+
+[widget.network]
+show_label = false
+
+[widget.notes]
+type = "noctalia/notes:notes"
+
+[widget.oppo_pods_2]
+hide_when_disconnected = false
+type = "osp54/oppo-pods:oppo-pods"
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.recorder_2]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.sysmon]
+stat = "ram_used"
+
+[widget.taskbar]
+show_active_indicator = false
+
+[widget.tray]
+enabled = true
+
+[widget.widget]
+type = "liamwh/emoji-picker:widget"
