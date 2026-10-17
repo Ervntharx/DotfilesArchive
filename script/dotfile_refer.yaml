@@ -1,0 +1,24 @@
+track_list:
+  - "~/.config/kitty/kitty.conf"  # kitty 终端模拟器
+  - "~/.config/environment.d/val.conf"   # 用户级环境变量
+  - "~/.config/fcitx5/config"     # fcitx输入法配置
+  - "~/.config/niri/config.kdl"   # niri wm
+  - "~/.config/umbriel/config.toml" # umbriel wm
+  - "~/.config/xdg-desktop-portal/portals.conf"      #portals
+  - "~/.config/yazi/keymap.toml"  # yazi keymap
+  - "~/.config/yazi/yazi.toml"    # yazi
+
+  - "~/.local/share/fcitx5/themes/acovia-pink-dark/*"  #fcitx theme
+  - "~/.local/state/noctalia/settings.toml" # noctalia settings
+  
+  - "/etc/nbfc/nbfc.json" # nbfc, fan config
+  - "/etc/default/grub"   # grub config
+  - "/etc/environment"    # global environment
+  # systemd: stop suspend, hibernate and sleep
+  - "/etc/systemd/logind.conf.d/*"
+  - "/etc/systemd/logind.conf"
+  - "/etc/systemd/sleep.conf"
+
+  # fan config json
+  - "/usr/share/nbfc/configs/MECHREVO Wujie 14 Performance.json"
+  - "/usr/share/nbfc/configs/MECHREVO Wujie 14 Silence.json"
